@@ -34,7 +34,7 @@ class AuthController extends Controller
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             RateLimiter::clear($key);
-            return redirect('dashboard');
+            return redirect('admin/dashboard');
         }
 
         RateLimiter::hit($key, 60);
