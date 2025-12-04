@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blogs extends Model
 {
-    use HasFactory;
+    protected $table = 'blogs';
+    protected $guarded = ['id'];
+
+    public function Category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

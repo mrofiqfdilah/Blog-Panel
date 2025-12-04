@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlogsImage extends Model
 {
-    use HasFactory;
+    protected $table = 'blogs_image';
+    protected $guarded = ['id'];
+
+    public function Blogs()
+    {
+        return $this->belongsTo(Blogs::class);
+    }
 }
